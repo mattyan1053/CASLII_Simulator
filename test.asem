@@ -1,0 +1,22 @@
+EX  START
+    LD GR3 A
+    LD GR0 B
+    XOR GR3 GR0
+    LAD GR1 0
+    LD GR2 CNT
+L1  LD GR0 GR3
+    AND GR0 ONE
+    JZE L2
+    ADDA GR1 ONE
+L2  SRA GR3 1
+    SUBA GR2 ONE
+    JNZ L1
+    ST GR1 ANS
+    RET
+A   DC 6
+B   DC 3
+CNT DC 4
+ONE DC 1
+ANS DS 1
+    END
+
